@@ -26,6 +26,7 @@
       var color = prompt("Please enter a color for your name (hexadecimal is supported)", "red")
 
       $('form').submit(function(){
+          e.preventDefault(); // this will prevent from submitting the form.
           socket.emit('chat message', {name: name, color: color, message: $('#m').val()});
           $('#m').val('');
           return false;
